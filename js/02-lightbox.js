@@ -20,21 +20,13 @@ function createGalleryItem(item) {
   galleryImage.addEventListener('click', e => {
     e.preventDefault();
 
-      var gallery = new SimpleLightbox('.gallery a', {
-          captions:true, captionDelay:250
+     var lightbox = new SimpleLightbox('.gallery a', {
+        captionsData: 'alt',
+        captionDelay: '250',
       });
       
-gallery.on('show.simplelightbox', function () {
-	// do something…
-});
-
-gallery.on('error.simplelightbox', function (e) {
-	console.log(e); // some usefull information
-});
-
   });
-
-  return galleryItem;
+    return galleryItem;
 }
 
 galleryItems.forEach(item => {
