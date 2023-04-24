@@ -10,7 +10,6 @@ function createGalleryItem(item) {
     const galleryImage = document.createElement('img');
     galleryImage.classList.add('gallery__image')
    
-
   galleryLink.href = item.original;
   galleryImage.src = item.preview;
   galleryImage.alt = item.description;
