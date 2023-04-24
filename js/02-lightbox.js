@@ -18,20 +18,15 @@ function createGalleryItem(item) {
   galleryLink.appendChild(galleryImage);
   galleryItem.appendChild(galleryLink);
 
-  galleryImage.addEventListener('click', event => {
-    event.preventDefault();
+     return galleryItem; 
+  }
+    
+const galleryItemsElements = galleryItems.map(item => createGalleryItem(item));
+gallery.append(...galleryItemsElements);
 
-     var lightbox = new SimpleLightbox('.gallery a', {
-        captionsData: 'alt',
-        captionDelay: '250',
-      });
-      
-  });
-    return galleryItem;
-}
-
-galleryItems.forEach(item => {
-  const galleryItem = createGalleryItem(item);
-  gallery.appendChild(galleryItem);
+const lightbox = new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
+  captionDelay: '250',
 });
+
 console.log(galleryItems);
